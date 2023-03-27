@@ -1,0 +1,93 @@
+﻿<Window x:Name="GAMEWINDOW" x:Class="SpyGameWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SpyGameWPF"
+        mc:Ignorable="d"
+        Title="NOIR : SPY GAME" Height="688" Width="1240" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Loaded="GAMEWINDOW_Loaded_1">
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="240*"/>
+            <ColumnDefinition Width="831*"/>
+        </Grid.ColumnDefinitions>
+        <Rectangle x:Name="LeftPanel" HorizontalAlignment="Center" Height="688" VerticalAlignment="Center" Width="277" Fill="#FF2D2D2D"/>
+        <Button x:Name="BTN_EXIT" Content="Button" HorizontalAlignment="Center" Margin="0,636,0,0" VerticalAlignment="Top" Height="42" Width="249" BorderBrush="{x:Null}" Foreground="White" FontFamily="Bahnschrift SemiLight SemiCondensed" FontSize="15" Click="BTN_EXIT_Click">
+            <Button.Background>
+                <SolidColorBrush Color="White"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="HOSTGAME" Content="Button" HorizontalAlignment="Center" Margin="0,367,0,0" VerticalAlignment="Top" Width="249" Height="49" Click="HOSTGAME_Click"/>
+        <Button x:Name="JOINGAME" Content="Button" HorizontalAlignment="Center" Margin="0,421,0,0" VerticalAlignment="Top" Width="249" Height="49"/>
+        <Rectangle HorizontalAlignment="Center" Height="154" VerticalAlignment="Top" Width="278" Fill="#FF3C3C3C"/>
+        <Label x:Name="GAMENAME" Content="Label" Margin="0,64,20,0" VerticalAlignment="Top" HorizontalAlignment="Left" RenderTransformOrigin="1,0.5"/>
+        <Grid x:Name="GameGrid" Grid.Column="1" Background="#FF5B5B5B">
+            <Grid x:Name="GridCells" HorizontalAlignment="Left" Height="566" Margin="33,95,0,0" VerticalAlignment="Top" Width="563">
+                <Button x:Name="CELL1" Content="Button" HorizontalAlignment="Left" Margin="73,72,5,0" VerticalAlignment="Top" Width="80" Height="80" Click="onCellPress"/>
+                <Button x:Name="CELL2" Content="Button" HorizontalAlignment="Left" Margin="158,72,5,0" VerticalAlignment="Top" Width="80" Height="80" Click="onCellPress"/>
+                <Button x:Name="CELL3" Content="Button" HorizontalAlignment="Left" Margin="243,72,5,0" VerticalAlignment="Top" Width="80" Height="80" Click="onCellPress"/>
+                <Button x:Name="CELL4" Content="Button" HorizontalAlignment="Left" Margin="328,72,5,0" VerticalAlignment="Top" Width="80" Height="80" Click="onCellPress"/>
+                <Button x:Name="CELL5" Content="Button" HorizontalAlignment="Left" Margin="413,72,5,0" VerticalAlignment="Top" Width="80" Height="80" Click="onCellPress"/>
+                <Button x:Name="CELL6" Content="Button" HorizontalAlignment="Left" Margin="73,157,5,0" VerticalAlignment="Top" Width="80" Height="80" Click="onCellPress"/>
+                <Button x:Name="CELL7" Content="Button" HorizontalAlignment="Left" Margin="158,157,5,0" VerticalAlignment="Top" Width="80" Height="80" Click="onCellPress"/>
+                <Button x:Name="CELL8" Content="Button" HorizontalAlignment="Left" Margin="243,157,5,0" VerticalAlignment="Top" Width="80" Height="80" Click="onCellPress"/>
+                <Button x:Name="CELL9" Content="Button" HorizontalAlignment="Left" Margin="328,157,5,0" VerticalAlignment="Top" Width="80" Height="80" Click="onCellPress"/>
+                <Button x:Name="CELL10" Content="Button" HorizontalAlignment="Left" Margin="413,157,5,0" VerticalAlignment="Top" Width="80" Height="80" Click="onCellPress"/>
+                <Button x:Name="CELL11" Content="Button" HorizontalAlignment="Left" Margin="73,242,5,0" VerticalAlignment="Top" Width="80" Height="80" Click="onCellPress"/>
+                <Button x:Name="CELL12" Content="Button" HorizontalAlignment="Left" Margin="158,242,5,0" VerticalAlignment="Top" Width="80" Height="80" Click="onCellPress"/>
+                <Button x:Name="CELL13" Content="Button" HorizontalAlignment="Left" Margin="243,242,5,0" VerticalAlignment="Top" Width="80" Height="80" Click="onCellPress"/>
+                <Button x:Name="CELL14" Content="Button" HorizontalAlignment="Left" Margin="328,242,5,0" VerticalAlignment="Top" Width="80" Height="80" Click="onCellPress"/>
+                <Button x:Name="CELL15" Content="Button" HorizontalAlignment="Left" Margin="413,242,5,0" VerticalAlignment="Top" Width="80" Height="80" Click="onCellPress"/>
+                <Button x:Name="CELL16" Content="Button" HorizontalAlignment="Left" Margin="73,327,5,0" VerticalAlignment="Top" Width="80" Height="80" Click="onCellPress"/>
+                <Button x:Name="CELL17" Content="Button" HorizontalAlignment="Left" Margin="158,327,5,0" VerticalAlignment="Top" Width="80" Height="80" Click="onCellPress"/>
+                <Button x:Name="CELL18" Content="Button" HorizontalAlignment="Left" Margin="243,327,5,0" VerticalAlignment="Top" Width="80" Height="80" Click="onCellPress"/>
+                <Button x:Name="CELL19" Content="Button" HorizontalAlignment="Left" Margin="328,327,5,0" VerticalAlignment="Top" Width="80" Height="80" Click="onCellPress"/>
+                <Button x:Name="CELL20" Content="Button" HorizontalAlignment="Left" Margin="413,327,5,0" VerticalAlignment="Top" Width="80" Height="80" Click="onCellPress"/>
+                <Button x:Name="CELL21" Content="Button" HorizontalAlignment="Left" Margin="73,412,5,0" VerticalAlignment="Top" Width="80" Height="80" Click="onCellPress"/>
+                <Button x:Name="CELL22" Content="Button" HorizontalAlignment="Left" Margin="158,412,5,0" VerticalAlignment="Top" Width="80" Height="80" Click="onCellPress"/>
+                <Button x:Name="CELL23" Content="Button" HorizontalAlignment="Left" Margin="243,412,5,0" VerticalAlignment="Top" Width="80" Height="80" Click="onCellPress"/>
+                <Button x:Name="CELL24" Content="Button" HorizontalAlignment="Left" Margin="328,412,5,0" VerticalAlignment="Top" Width="80" Height="80" Click="onCellPress"/>
+                <Button x:Name="CELL25" Content="Button" HorizontalAlignment="Left" Margin="413,412,5,0" VerticalAlignment="Top" Width="80" Height="80" Click="onCellPress"/>
+                <Grid x:Name="MoverLeft" HorizontalAlignment="Left" Height="448" Margin="0,58,0,0" VerticalAlignment="Top" Width="51">
+                    <Button x:Name="Line1Left" Content="←" HorizontalAlignment="Center" Margin="0,14,0,0" VerticalAlignment="Top" Width="51" Height="80" Click="MoverLeft_BTN" FontSize="20"/>
+                    <Button x:Name="Line2Left" Content="←" HorizontalAlignment="Center" Margin="0,99,0,0" VerticalAlignment="Top" Width="51" Height="80" Click="MoverLeft_BTN" FontSize="20"/>
+                    <Button x:Name="Line3Left" Content="←" HorizontalAlignment="Center" VerticalAlignment="Center" Width="51" Height="80" Click="MoverLeft_BTN" FontSize="20"/>
+                    <Button x:Name="Line4Left" Content="←" HorizontalAlignment="Center" Margin="0,269,0,0" VerticalAlignment="Top" Width="51" Height="80" Click="MoverLeft_BTN" FontSize="20"/>
+                    <Button x:Name="Line5Left" Content="←" HorizontalAlignment="Center" Margin="0,354,0,0" VerticalAlignment="Top" Width="51" Height="80" Click="MoverLeft_BTN" FontSize="20"/>
+                </Grid>
+                <Grid x:Name="MoverRight" HorizontalAlignment="Left" Height="448" Margin="512,58,0,0" VerticalAlignment="Top" Width="51">
+                    <Button x:Name="Line1Right" Content="→" HorizontalAlignment="Center" Margin="0,14,0,0" VerticalAlignment="Top" Width="51" Height="80" Click="MoverRight_BTN" FontSize="20"/>
+                    <Button x:Name="Line2Right" Content="→" HorizontalAlignment="Center" Margin="0,99,0,0" VerticalAlignment="Top" Width="51" Height="80" Click="MoverRight_BTN" FontSize="20"/>
+                    <Button x:Name="Line3Right" Content="→" HorizontalAlignment="Center" VerticalAlignment="Center" Width="51" Height="80" Click="MoverRight_BTN" FontSize="20"/>
+                    <Button x:Name="Line4Right" Content="→" HorizontalAlignment="Center" Margin="0,269,0,0" VerticalAlignment="Top" Width="51" Height="80" Click="MoverRight_BTN" FontSize="20"/>
+                    <Button x:Name="Line5Right" Content="→" HorizontalAlignment="Center" Margin="0,354,0,0" VerticalAlignment="Top" Width="51" Height="80" Click="MoverRight_BTN" FontSize="20"/>
+                </Grid>
+                <Grid x:Name="MoverUp" HorizontalAlignment="Left" Height="51" Margin="74,0,0,0" VerticalAlignment="Top" Width="419">
+                    <Button x:Name="Row1Up" Content="↑" HorizontalAlignment="Left" VerticalAlignment="Center" Width="80" Height="51" Click="MoverUp_BTN" FontSize="20"/>
+                    <Button x:Name="Row2Up" Content="↑" HorizontalAlignment="Left" VerticalAlignment="Center" Width="80" Height="51" Margin="85,0,0,0" Click="MoverUp_BTN" FontSize="20"/>
+                    <Button x:Name="Row3Up" Content="↑" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80" Height="51" Click="MoverUp_BTN" FontSize="20"/>
+                    <Button x:Name="Row4Up" Content="↑" HorizontalAlignment="Left" VerticalAlignment="Center" Width="80" Height="51" Margin="254,0,0,0" Click="MoverUp_BTN" FontSize="20"/>
+                    <Button x:Name="Row5Up" Content="↑" HorizontalAlignment="Left" VerticalAlignment="Center" Width="80" Height="51" Margin="339,0,0,0" Click="MoverUp_BTN" FontSize="20"/>
+                </Grid>
+                <Grid x:Name="MoverDown" HorizontalAlignment="Left" Height="51" Margin="74,515,0,0" VerticalAlignment="Top" Width="419">
+                    <Button x:Name="Row1Down" Content="↓" HorizontalAlignment="Left" VerticalAlignment="Center" Width="80" Height="51" Click="MoverDown_BTN" FontSize="20"/>
+                    <Button x:Name="Row2Down" Content="↓" HorizontalAlignment="Left" VerticalAlignment="Center" Width="80" Height="51" Margin="85,0,0,0" Click="MoverDown_BTN" FontSize="20"/>
+                    <Button x:Name="Row3Down" Content="↓" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80" Height="51" Click="MoverDown_BTN" FontSize="20"/>
+                    <Button x:Name="Row4Down" Content="↓" HorizontalAlignment="Left" VerticalAlignment="Center" Width="80" Height="51" Margin="254,0,0,0" Click="MoverDown_BTN" FontSize="20"/>
+                    <Button x:Name="Row5Down" Content="↓" HorizontalAlignment="Left" VerticalAlignment="Center" Width="80" Height="51" Margin="339,0,0,0" Click="MoverDown_BTN" FontSize="20"/>
+                </Grid>
+            </Grid>
+            <Label Content="Вы : " HorizontalAlignment="Left" Margin="201,20,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Bahnschrift Light SemiCondensed" FontSize="20"/>
+            <Label x:Name="PlayerName" Content="Label" HorizontalAlignment="Left" Margin="247,20,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Bahnschrift Light SemiCondensed" FontSize="20"/>
+            <TextBox x:Name="GameLogsOutput" HorizontalAlignment="Left" Height="426" Margin="611,252,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="341"/>
+            <RadioButton x:Name="PlayerTurnSearch" Content="RadioButton" HorizontalAlignment="Left" Margin="612,136,0,0" VerticalAlignment="Top"/>
+            <RadioButton x:Name="PlayerTurnJail" Content="RadioButton" HorizontalAlignment="Left" Margin="612,168,0,0" VerticalAlignment="Top"/>
+            <Button x:Name="ChangeCard" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="340" Height="45" Click="ChangeCard_Click_1" Margin="612,202,0,0"/>
+            <Label Content="Ваш персонаж : " HorizontalAlignment="Left" Margin="108,48,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Bahnschrift Light SemiCondensed" FontSize="20"/>
+            <Label x:Name="PlayerCharName" Content="Label" HorizontalAlignment="Left" Margin="247,48,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Bahnschrift Light SemiCondensed" FontSize="20"/>
+        </Grid>
+
+    </Grid>
+</Window>

@@ -15,6 +15,7 @@ namespace SpyGameWPF.BLOCKS
 {
     public class PlayerTurn
     {
+        public int COSTYL = 0;
         string ENEMY = "Иван";
         public void ChangeCard(MainWindow FRM1, object sender)
         {
@@ -64,13 +65,11 @@ namespace SpyGameWPF.BLOCKS
                         SelectedMass[l, r] = FRM1.PDB.CharsEdited[a, b];
                         r++;
                     }
-
                 }
                 l++; r = 0;
             }
-
             FINDER = SelectedMass;
-            int COSTYL = 0;
+
             for (int i = 0; i < FINDER.GetLength(0); i++)
             {
                 for (int j = 0; j < FINDER.GetLength(1); j++)
@@ -82,11 +81,8 @@ namespace SpyGameWPF.BLOCKS
                             if (s == ENEMY)
                             {
                                 FRM1.boolean = 1;
-                                DialogResult result;
-                                result = MessageBox.Show("В поле допроса обнаружен шпион!!!", "Результаты допроса", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                if (result == DialogResult.OK)
-                                {
-                                }
+                                MessageBox.Show("В поле допроса обнаружен шпион!!!", "Результаты допроса", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                FRM1.GLOG.Logger(FRM1, DIRS, PTSLCT, BTN.Content.ToString(), null);
                             }
                             else if (COSTYL == 0)
                             {

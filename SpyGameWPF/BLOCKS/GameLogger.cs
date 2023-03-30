@@ -16,7 +16,7 @@ namespace SpyGameWPF.BLOCKS
                     if (FRM1.boolean == 0)
                     {
                         FRM1.GameLogsOutput.Text += "Игрок " + FRM1.PlayerName.Content + " допросил " + CharName + " и шпионов не нашел." + Environment.NewLine;
-                    } else
+                    } else if (FRM1.boolean > 0)
                     {
                         FRM1.GameLogsOutput.Text += "Игрок " + FRM1.PlayerName.Content + " допросил " + CharName + " и нашел шпиона!" + Environment.NewLine;
                     }

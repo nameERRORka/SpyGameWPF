@@ -25,7 +25,7 @@ namespace SpyGameWPF
         public PreInit INIT = new PreInit();
         public Profiler PDB = new Profiler();
         public GameLogger GLOG = new GameLogger();
-        public PlayerTurn PTRN = new PlayerTurn();
+        public PlayerTurn PTRN = new PlayerTurn();        
         public int boolean = 0;
 
         public enum Direction { LEFT, RIGHT, UP, DOWN }
@@ -103,6 +103,10 @@ namespace SpyGameWPF
             INIT.PreInitialization(this);
             INIT.PreInitDB(this);
             PDB.ChrEditable(this);
+            LoginPanel LPanel = new LoginPanel(this);
+            this.Hide();
+            LPanel.Owner = this;
+            LPanel.ShowDialog();
         }
 
         public void onCellPress(object sender, RoutedEventArgs e)
@@ -116,6 +120,11 @@ namespace SpyGameWPF
             {
                 PTRN.TurnJail(this, sender, PlayerTurnSelect.JAIL, Direction.LEFT);
             }
+        }
+
+        public void PlayerRename(LoginPanel LPan)
+        {
+            PlayerName.Content = LPan.Login.Text;
         }
     }
 }

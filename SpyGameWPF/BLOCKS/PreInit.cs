@@ -52,6 +52,15 @@ namespace SpyGameWPF.BLOCKS
             //GAMEPANEL
             //RIGHTPANEL
             GameWindow.GameLogsOutput.Text = "";
+            //PLAYER TURN PANEL
+            GameWindow.PlayerTurnSearch.Content = "Допросить подозреваемого";
+            GameWindow.PlayerTurnSearch.FontSize = 15;
+            GameWindow.PlayerTurnSearch.Foreground = Brushes.White;
+            GameWindow.PlayerTurnSearch.FontFamily = new System.Windows.Media.FontFamily("Bahnschrift Light Condensed");
+            GameWindow.PlayerTurnJail.Content = "Посадить шпионюгу";
+            GameWindow.PlayerTurnJail.FontSize = 15;
+            GameWindow.PlayerTurnJail.Foreground = Brushes.White;
+            GameWindow.PlayerTurnJail.FontFamily = new System.Windows.Media.FontFamily("Bahnschrift Light Condensed");
         }
 
         public void PreInitDB(MainWindow MWIND)

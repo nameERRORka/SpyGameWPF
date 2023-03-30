@@ -5,16 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SpyGameWPF"
         mc:Ignorable="d"
-        Title="NOIR : SPY GAME" Height="688" Width="1240" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Loaded="GAMEWINDOW_Loaded_1">
-
+        Title="NOIR : SPY GAME" Height="688" Width="1240" AllowsTransparency="True" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Loaded="GAMEWINDOW_Loaded_1">
+    <Window.Clip>
+        <RectangleGeometry Rect="0,0,1240,688" RadiusX="25" RadiusY="25"/>
+    </Window.Clip>
 
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="240*"/>
             <ColumnDefinition Width="831*"/>
         </Grid.ColumnDefinitions>
-        <Rectangle x:Name="LeftPanel" HorizontalAlignment="Center" Height="688" VerticalAlignment="Center" Width="277" Fill="#FF2D2D2D"/>
-        <Button x:Name="BTN_EXIT" Content="Button" HorizontalAlignment="Center" Margin="0,636,0,0" VerticalAlignment="Top" Height="42" Width="249" BorderBrush="{x:Null}" Foreground="White" FontFamily="Bahnschrift SemiLight SemiCondensed" FontSize="15" Click="BTN_EXIT_Click">
+        <Rectangle x:Name="LeftPanel" HorizontalAlignment="Center" Height="688" VerticalAlignment="Center" Width="315" Fill="#FF2D2D2D"/>
+        <Button x:Name="BTN_EXIT" Content="Button" HorizontalAlignment="Center" Margin="0,600,0,0" VerticalAlignment="Top" Height="42" Width="249" BorderBrush="{x:Null}" Foreground="White" FontFamily="Bahnschrift SemiLight SemiCondensed" FontSize="15" Click="BTN_EXIT_Click">
             <Button.Background>
                 <SolidColorBrush Color="White"/>
             </Button.Background>
@@ -82,11 +84,13 @@
             <Label Content="Вы : " HorizontalAlignment="Left" Margin="201,20,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Bahnschrift Light SemiCondensed" FontSize="20"/>
             <Label x:Name="PlayerName" Content="Label" HorizontalAlignment="Left" Margin="247,20,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Bahnschrift Light SemiCondensed" FontSize="20"/>
             <TextBox x:Name="GameLogsOutput" HorizontalAlignment="Left" Height="426" Margin="611,252,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="341"/>
-            <RadioButton x:Name="PlayerTurnSearch" Content="RadioButton" HorizontalAlignment="Left" Margin="612,136,0,0" VerticalAlignment="Top"/>
-            <RadioButton x:Name="PlayerTurnJail" Content="RadioButton" HorizontalAlignment="Left" Margin="612,168,0,0" VerticalAlignment="Top"/>
             <Button x:Name="ChangeCard" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="340" Height="45" Click="ChangeCard_Click_1" Margin="612,202,0,0"/>
             <Label Content="Ваш персонаж : " HorizontalAlignment="Left" Margin="108,48,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Bahnschrift Light SemiCondensed" FontSize="20"/>
             <Label x:Name="PlayerCharName" Content="Label" HorizontalAlignment="Left" Margin="247,48,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Bahnschrift Light SemiCondensed" FontSize="20"/>
+            <Grid x:Name="RoomPanel" HorizontalAlignment="Left" Height="187" Margin="612,10,0,0" VerticalAlignment="Top" Width="340" Background="#FF7B7B7B">
+                <RadioButton x:Name="PlayerTurnSearch" Content="RadioButton" HorizontalAlignment="Left" Margin="10,132,0,0" VerticalAlignment="Top" Panel.ZIndex="1" Background="White"/>
+                <RadioButton x:Name="PlayerTurnJail" Content="RadioButton" HorizontalAlignment="Left" Margin="10,162,0,0" VerticalAlignment="Top"/>
+            </Grid>
         </Grid>
 
     </Grid>

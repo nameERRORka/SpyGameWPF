@@ -67,12 +67,6 @@ namespace SpyGameWPF.BLOCKS
             GameWindow.JOINGAME.BorderThickness = new Thickness(0);
             GameWindow.JOINGAME.Background = Brushes.DimGray;
             GameWindow.JOINGAME.Foreground = Brushes.Black;
-            //GAMENAME
-            GameWindow.GAMENAME.Content = "НУАР\nШпионские игры";
-            GameWindow.GAMENAME.FontSize = 20;
-            GameWindow.GAMENAME.FontFamily = new System.Windows.Media.FontFamily("Bahnschrift Light Condensed");
-            GameWindow.GAMENAME.Foreground = Brushes.White;
-            GameWindow.GAMENAME.HorizontalAlignment = HorizontalAlignment.Right;
             //GAMEPANEL
             //RIGHTPANEL
             GameWindow.GameLogsOutput.Text = "";

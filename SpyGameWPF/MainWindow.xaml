@@ -23,8 +23,7 @@
         </Button>
         <Button x:Name="HOSTGAME" Content="Button" HorizontalAlignment="Center" Margin="0,367,0,0" VerticalAlignment="Top" Width="249" Height="49" Click="HOSTGAME_Click"/>
         <Button x:Name="JOINGAME" Content="Button" HorizontalAlignment="Center" Margin="0,421,0,0" VerticalAlignment="Top" Width="249" Height="49"/>
-        <Rectangle HorizontalAlignment="Center" Height="154" VerticalAlignment="Top" Width="278" Fill="#FF3C3C3C"/>
-        <Label x:Name="GAMENAME" Content="Label" Margin="0,64,20,0" VerticalAlignment="Top" HorizontalAlignment="Left" RenderTransformOrigin="1,0.5"/>
+        <Rectangle HorizontalAlignment="Center" Height="323" VerticalAlignment="Top" Width="278" Fill="#FF3C3C3C"/>
         <Grid x:Name="GameGrid" Grid.Column="1" Background="#FF5B5B5B">
             <Grid x:Name="GridCells" HorizontalAlignment="Left" Height="566" Margin="33,95,0,0" VerticalAlignment="Top" Width="563">
                 <Button x:Name="CELL1" Content="Button" HorizontalAlignment="Left" Margin="73,72,5,0" VerticalAlignment="Top" Width="80" Height="80" Click="onCellPress"/>
@@ -93,6 +92,7 @@
                 <ListBox HorizontalAlignment="Left" Height="117" VerticalAlignment="Top" Width="183" d:ItemsSource="{d:SampleData ItemCount=5}"/>
             </Grid>
         </Grid>
+        <Image HorizontalAlignment="Left" Height="313" VerticalAlignment="Top" Width="330" Source="/logoSpyGame.png" Grid.ColumnSpan="2" Margin="-19,10,0,0"/>
 
     </Grid>
 </Window>

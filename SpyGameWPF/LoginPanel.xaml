@@ -10,11 +10,17 @@
         <RectangleGeometry Rect="0,0,433,316" RadiusX="25" RadiusY="25"/>
     </Window.Clip>
     <Grid Background="#FF5A5A5A">
-        <Button x:Name="JoinInto" Content="Button" HorizontalAlignment="Center" Margin="0,199,0,0" VerticalAlignment="Top" Width="181" Height="32" Click="LoginProcess"/>
-        <Button x:Name="ExitGame" Content="Button" HorizontalAlignment="Center" Margin="0,236,0,0" VerticalAlignment="Top" Width="180" Height="32" Click="ExitGame_Click"/>
-        <PasswordBox x:Name="Password" HorizontalAlignment="Left" Margin="162,0,0,0" VerticalAlignment="Center" Width="180" Height="30" FontFamily="Bahnschrift Light SemiCondensed" FontSize="20" TabIndex="2"/>
-        <TextBox x:Name="Login" HorizontalAlignment="Left" Margin="162,106,0,0" TextWrapping="Wrap" Text="Введите логин" VerticalAlignment="Top" Width="180" Height="30" FontFamily="Bahnschrift Light SemiCondensed" FontSize="20" TabIndex="1" GotFocus="Login_GotFocus"/>
+        <Image HorizontalAlignment="Left" Height="544" Margin="-146,-36,0,0" VerticalAlignment="Top" Width="645" Source="/logoSpyGame.png" Opacity="0.2">
+            <Image.OpacityMask>
+                <ImageBrush ImageSource="/logoSpyGame.png" TileMode="None" Stretch="Fill"/>
+            </Image.OpacityMask>
+        </Image>
+        <Button x:Name="JoinInto" Content="Войти" HorizontalAlignment="Center" Margin="0,199,0,0" VerticalAlignment="Top" Width="181" Height="32" Click="LoginProcess" FontFamily="Bahnschrift Light Condensed" FontSize="20"/>
+        <Button x:Name="ExitGame" Content="Выход" HorizontalAlignment="Center" Margin="0,236,0,0" VerticalAlignment="Top" Width="180" Height="32" Click="ExitGame_Click" FontFamily="Bahnschrift Light Condensed" FontSize="20"/>
+        <PasswordBox x:Name="Password" HorizontalAlignment="Left" Margin="162,0,0,0" VerticalAlignment="Center" Width="180" Height="30" FontFamily="Bahnschrift Light Condensed" FontSize="20" TabIndex="2"/>
+        <TextBox x:Name="Login" HorizontalAlignment="Left" Margin="162,106,0,0" TextWrapping="Wrap" Text="Введите логин" VerticalAlignment="Top" Width="180" Height="30" FontFamily="Bahnschrift Light Condensed" FontSize="20" TabIndex="1" GotFocus="Login_GotFocus"/>
         <Label Content="Логин : " HorizontalAlignment="Left" Margin="90,102,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift SemiCondensed" FontSize="20" Foreground="White"/>
         <Label Content="Пароль : " HorizontalAlignment="Left" Margin="80,0,0,0" VerticalAlignment="Center" FontFamily="Bahnschrift SemiCondensed" FontSize="20" Foreground="White"/>
+
     </Grid>
 </Window>

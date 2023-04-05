@@ -1,10 +1,7 @@
 ﻿using SpyGameWPF.BLOCKS;
 using SpyGameWPF.DATABASE;
-using System;
-using System.Diagnostics;
 using System.Linq;
 using System.Windows;
-using System.Windows.Controls;
 /*
 █████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████ 
 █████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████ 
@@ -33,8 +30,8 @@ using System.Windows.Controls;
 namespace SpyGameWPF
 {
     public partial class LoginPanel : Window
-    {         
-        public LoginPanel( MainWindow MWIND)
+    {
+        public LoginPanel(MainWindow MWIND)
         {
             InitializeComponent();
         }
@@ -42,11 +39,6 @@ namespace SpyGameWPF
         private void ExitGame_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
-        }
-
-        private void JoinInto_Click(object sender, RoutedEventArgs e)
-        {
-            
         }
         public ushort secretKey = 0x0088;
         private void LoginProcess(object sender, RoutedEventArgs e)
@@ -73,7 +65,7 @@ namespace SpyGameWPF
                         }
                         else
                         {
-                            MessageBox.Show("Ошибка в логине или пароле.\nПроверьте правильность и повторите попытку","Ошибка входа", MessageBoxButton.OK, MessageBoxImage.Error);
+                            MessageBox.Show("Ошибка в логине или пароле.\nПроверьте правильность и повторите попытку", "Ошибка входа", MessageBoxButton.OK, MessageBoxImage.Error);
                         }
                     }
                     else
@@ -88,13 +80,13 @@ namespace SpyGameWPF
             }
             else
             {
-                MessageBox.Show("Проверьте логин или пароль.","Ошибка входа", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Проверьте логин или пароль.", "Ошибка входа", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
         public static string EncodeDecrypt(string str, ushort secretKey)
         {
-            var ch = str.ToArray(); 
+            var ch = str.ToArray();
             string newStr = "";
             foreach (var c in ch)
                 newStr += TopSecret(c, secretKey);
@@ -109,7 +101,6 @@ namespace SpyGameWPF
         public int i = 0;
         private void Login_GotFocus(object sender, RoutedEventArgs e)
         {
-            
             i++;
             if (i <= 1)
             {

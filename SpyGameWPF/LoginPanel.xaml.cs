@@ -4,8 +4,32 @@ using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Windows;
-using System.Windows.Forms;
-
+using System.Windows.Controls;
+/*
+█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████ 
+█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████ 
+█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████
+█░░░░░░░░░░░░░░█░░░░░░░░░░░░░░█░░░░░░░░░░░░░░█░░░░░░░░░░░░░░░░███░░░░░░░░░░░░░░█░░░░░░░░░░░░░░█░░░░░░░░░░░░░░█░░░░░░░░░░░░░░█
+█░░▄▀▄▀▄▀▄▀▄▀░░█░░▄▀▄▀▄▀▄▀▄▀░░█░░▄▀▄▀▄▀▄▀▄▀░░█░░▄▀▄▀▄▀▄▀▄▀▄▀░░███░░▄▀▄▀▄▀▄▀▄▀░░█░░▄▀▄▀▄▀▄▀▄▀░░█░░▄▀▄▀▄▀▄▀▄▀░░█░░▄▀▄▀▄▀▄▀▄▀░░█
+█░░▄▀░░░░░░░░░░█░░▄▀░░░░░░░░░░█░░▄▀░░░░░░▄▀░░█░░▄▀░░░░░░░░▄▀░░███░░▄▀░░░░░░░░░░█░░░░░░▄▀░░░░░░█░░▄▀░░░░░░▄▀░░█░░▄▀░░░░░░▄▀░░█
+█░░▄▀░░█████████░░▄▀░░█████████░░▄▀░░██░░▄▀░░█░░▄▀░░████░░▄▀░░███░░▄▀░░█████████████░░▄▀░░█████░░▄▀░░██░░▄▀░░█░░▄▀░░██░░▄▀░░█
+█░░▄▀░░░░░░░░░░█░░▄▀░░█████████░░▄▀░░██░░▄▀░░█░░▄▀░░░░░░░░▄▀░░███░░▄▀░░░░░░░░░░█████░░▄▀░░█████░░▄▀░░██░░▄▀░░█░░▄▀░░░░░░▄▀░░█
+█░░▄▀▄▀▄▀▄▀▄▀░░█░░▄▀░░█████████░░▄▀░░██░░▄▀░░█░░▄▀▄▀▄▀▄▀▄▀▄▀░░███░░▄▀▄▀▄▀▄▀▄▀░░█████░░▄▀░░█████░░▄▀░░██░░▄▀░░█░░▄▀▄▀▄▀▄▀▄▀░░█
+█░░▄▀░░░░░░░░░░█░░▄▀░░█████████░░▄▀░░██░░▄▀░░█░░▄▀░░░░░░▄▀░░░░███░░▄▀░░░░░░░░░░█████░░▄▀░░█████░░▄▀░░██░░▄▀░░█░░▄▀░░░░░░░░░░█
+█░░▄▀░░█████████░░▄▀░░█████████░░▄▀░░██░░▄▀░░█░░▄▀░░██░░▄▀░░█████░░▄▀░░█████████████░░▄▀░░█████░░▄▀░░██░░▄▀░░█░░▄▀░░█████████
+█░░▄▀░░█████████░░▄▀░░░░░░░░░░█░░▄▀░░░░░░▄▀░░█░░▄▀░░██░░▄▀░░░░░░█░░▄▀░░░░░░░░░░█████░░▄▀░░█████░░▄▀░░░░░░▄▀░░█░░▄▀░░█████████
+█░░▄▀░░█████████░░▄▀▄▀▄▀▄▀▄▀░░█░░▄▀▄▀▄▀▄▀▄▀░░█░░▄▀░░██░░▄▀▄▀▄▀░░█░░▄▀▄▀▄▀▄▀▄▀░░█████░░▄▀░░█████░░▄▀▄▀▄▀▄▀▄▀░░█░░▄▀░░█████████
+█░░░░░░█████████░░░░░░░░░░░░░░█░░░░░░░░░░░░░░█░░░░░░██░░░░░░░░░░█░░░░░░░░░░░░░░█████░░░░░░█████░░░░░░░░░░░░░░█░░░░░░█████████
+█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████
+█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████ 
+█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████
+█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████
+█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████
+██████████████████████████████████████████████████▄─▄▄─█─▄▄▄─█▄─▄▄▀█▄─▄▄─█▄─█─▄██████████████████████████████████████████████
+███████████████████████████████████████████████████─▄███─███▀██─██─██─▄█▀██▄▀▄███████████████████████████████████████████████
+██████████████████████████████████████████████████▄▄▄███▄▄▄▄▄█▄▄▄▄██▄▄▄▄▄███▄████████████████████████████████████████████████
+█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████
+ */
 namespace SpyGameWPF
 {
     public partial class LoginPanel : Window
@@ -27,47 +51,44 @@ namespace SpyGameWPF
         public ushort secretKey = 0x0088;
         private void LoginProcess(object sender, RoutedEventArgs e)
         {
-            string PassHash = Password.Password;
-
-
-            using (var context = new DBCont())
+            if (Login.Text != "" && Password.Password != "")
             {
-                var LoginAcc = new Account()
+                string PassHash = Password.Password;
+                using (var context = new DBCont())
                 {
-                    Username = Login.Text,
-                    Password = EncodeDecrypt(PassHash, secretKey)
-                };
+                    var LoginAcc = new Account()
+                    {
+                        Username = Login.Text,
+                        Password = EncodeDecrypt(PassHash, secretKey)
+                    };
 
-                if (context.Accounts.Any(o => o.Username == LoginAcc.Username) && context.Accounts.Any(o => o.Password == LoginAcc.Password))
-                {
-                    var res = context.Accounts.Where(i => i = Login.Text)
-                    MainWindow MWIND = Owner as MainWindow;
-                    MWIND.PlayerRename(this);
-                    MWIND.Show();
-                    this.Close();
+                    if (context.Accounts.Any(o => o.Username == Login.Text))
+                    {
+                        if (context.Accounts.Any(o => o.Username == LoginAcc.Username && o.Password == LoginAcc.Password))
+                        {
+                            MainWindow MWIND = Owner as MainWindow;
+                            MWIND.PlayerRename(this, LoginAcc.Username);
+                            MWIND.Show();
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ошибка в логине или пароле.\nПроверьте правильность и повторите попытку","Ошибка входа", MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
+                    }
+                    else
+                    {
+                        if (MessageBox.Show($"Аккаунта '{LoginAcc.Username}' не найдено!\nХотите создать новый?", "Создание аккаунта", MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.OK)
+                        {
+                            context.Accounts.Add(LoginAcc);
+                            context.SaveChanges();
+                        }
+                    }
                 }
             }
-        }
-
-        private void RegButton_Click(object sender, RoutedEventArgs e)
-        {
-            
-            string PassHash = Password.Password;
-
-            using (var context = new DBCont())
+            else
             {
-                var RegAccount = new Account()
-                {
-                    Username = Login.Text,
-                    Password = EncodeDecrypt(PassHash, secretKey)
-                };
-
-                if (!context.Accounts.Any(o => o.Username == Login.Text))
-                {
-                    context.Accounts.Add(RegAccount);
-                    Debug.WriteLine($"CREATED ACC : {RegAccount.Username}\nPassword : {RegAccount.Password}");
-                }
-                context.SaveChanges();
+                MessageBox.Show("Проверьте логин или пароль.","Ошибка входа", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -84,6 +105,16 @@ namespace SpyGameWPF
         {
             character = (char)(character ^ secretKey);
             return character;
+        }
+        public int i = 0;
+        private void Login_GotFocus(object sender, RoutedEventArgs e)
+        {
+            
+            i++;
+            if (i <= 1)
+            {
+                Login.Clear();
+            }
         }
     }
 }

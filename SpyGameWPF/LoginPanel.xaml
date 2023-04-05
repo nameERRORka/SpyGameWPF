@@ -12,10 +12,9 @@
     <Grid Background="#FF5A5A5A">
         <Button x:Name="JoinInto" Content="Button" HorizontalAlignment="Center" Margin="0,199,0,0" VerticalAlignment="Top" Width="181" Height="32" Click="LoginProcess"/>
         <Button x:Name="ExitGame" Content="Button" HorizontalAlignment="Center" Margin="0,236,0,0" VerticalAlignment="Top" Width="180" Height="32" Click="ExitGame_Click"/>
-        <PasswordBox x:Name="Password" HorizontalAlignment="Left" Margin="162,0,0,0" VerticalAlignment="Center" Width="180" Height="30" FontFamily="Bahnschrift Light SemiCondensed" FontSize="20"/>
-        <TextBox x:Name="Login" HorizontalAlignment="Left" Margin="162,106,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="180" Height="30" FontFamily="Bahnschrift Light SemiCondensed" FontSize="20"/>
+        <PasswordBox x:Name="Password" HorizontalAlignment="Left" Margin="162,0,0,0" VerticalAlignment="Center" Width="180" Height="30" FontFamily="Bahnschrift Light SemiCondensed" FontSize="20" TabIndex="2"/>
+        <TextBox x:Name="Login" HorizontalAlignment="Left" Margin="162,106,0,0" TextWrapping="Wrap" Text="Введите логин" VerticalAlignment="Top" Width="180" Height="30" FontFamily="Bahnschrift Light SemiCondensed" FontSize="20" TabIndex="1" GotFocus="Login_GotFocus"/>
         <Label Content="Логин : " HorizontalAlignment="Left" Margin="90,102,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift SemiCondensed" FontSize="20" Foreground="White"/>
         <Label Content="Пароль : " HorizontalAlignment="Left" Margin="80,0,0,0" VerticalAlignment="Center" FontFamily="Bahnschrift SemiCondensed" FontSize="20" Foreground="White"/>
-        <Button x:Name="RegButton" Content="Button" HorizontalAlignment="Left" Height="32" Margin="43,199,0,0" VerticalAlignment="Top" Width="41" Click="RegButton_Click"/>
     </Grid>
 </Window>

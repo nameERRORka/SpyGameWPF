@@ -90,6 +90,7 @@
             <Grid x:Name="RoomPanel" HorizontalAlignment="Left" Height="187" Margin="612,10,0,0" VerticalAlignment="Top" Width="340" Background="#FF7B7B7B">
                 <RadioButton x:Name="PlayerTurnSearch" Content="RadioButton" HorizontalAlignment="Left" Margin="10,132,0,0" VerticalAlignment="Top" Panel.ZIndex="1" Background="White"/>
                 <RadioButton x:Name="PlayerTurnJail" Content="RadioButton" HorizontalAlignment="Left" Margin="10,162,0,0" VerticalAlignment="Top"/>
+                <ListBox HorizontalAlignment="Left" Height="117" VerticalAlignment="Top" Width="183" d:ItemsSource="{d:SampleData ItemCount=5}"/>
             </Grid>
         </Grid>
 

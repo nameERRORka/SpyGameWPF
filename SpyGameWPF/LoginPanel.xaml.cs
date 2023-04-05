@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using SpyGameWPF.BLOCKS;
+using SpyGameWPF.DATABASE;
+using System;
+using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using System.Windows.Forms;
 
 namespace SpyGameWPF
 {
@@ -30,18 +24,66 @@ namespace SpyGameWPF
         {
             
         }
-
-        public void LoginProcess(MainWindow MWIND)
-        {
-            MWIND.PlayerName.Content = Login.Text;
-        }
-
+        public ushort secretKey = 0x0088;
         private void LoginProcess(object sender, RoutedEventArgs e)
         {
-            MainWindow MWIND = Owner as MainWindow;
-            MWIND.PlayerRename(this);
-            MWIND.Show();
-            this.Close();
+            string PassHash = Password.Password;
+
+
+            using (var context = new DBCont())
+            {
+                var LoginAcc = new Account()
+                {
+                    Username = Login.Text,
+                    Password = EncodeDecrypt(PassHash, secretKey)
+                };
+
+                if (context.Accounts.Any(o => o.Username == LoginAcc.Username) && context.Accounts.Any(o => o.Password == LoginAcc.Password))
+                {
+                    var res = context.Accounts.Where(i => i = Login.Text)
+                    MainWindow MWIND = Owner as MainWindow;
+                    MWIND.PlayerRename(this);
+                    MWIND.Show();
+                    this.Close();
+                }
+            }
+        }
+
+        private void RegButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+            string PassHash = Password.Password;
+
+            using (var context = new DBCont())
+            {
+                var RegAccount = new Account()
+                {
+                    Username = Login.Text,
+                    Password = EncodeDecrypt(PassHash, secretKey)
+                };
+
+                if (!context.Accounts.Any(o => o.Username == Login.Text))
+                {
+                    context.Accounts.Add(RegAccount);
+                    Debug.WriteLine($"CREATED ACC : {RegAccount.Username}\nPassword : {RegAccount.Password}");
+                }
+                context.SaveChanges();
+            }
+        }
+
+        public static string EncodeDecrypt(string str, ushort secretKey)
+        {
+            var ch = str.ToArray(); 
+            string newStr = "";
+            foreach (var c in ch)
+                newStr += TopSecret(c, secretKey);
+            return newStr;
+        }
+
+        public static char TopSecret(char character, ushort secretKey)
+        {
+            character = (char)(character ^ secretKey);
+            return character;
         }
     }
 }

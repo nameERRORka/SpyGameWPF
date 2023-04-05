@@ -1,6 +1,9 @@
 ﻿using Microsoft.SqlServer.Server;
+using SpyGameWPF.DATABASE;
+using SpyGameWPF.DATABASE.Tables;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +22,30 @@ namespace SpyGameWPF.BLOCKS
         //Игровой массив
         public string[,] CharsEdited = new string[,] { };
 
+        
+
         public void ChrEditable(MainWindow MWIND)
         {
             CharsEdited = Characters; //Присвоение предстартовое
+
+            
+        }
+
+        public void Initialize()
+        {
+            using (var context = new DBCont())
+            {
+                var Chars = new List<Characters>()
+                {
+                    new Characters() {Charname = "Виктор", Alive = true},
+                    new Characters() {Charname = "Игорь", Alive=true},
+                    new Characters() {Charname = "Александр", Alive=true},
+                    new Characters() {Charname = "Сергей", Alive=true},
+                    new Characters() {Charname = "Максим", Alive=true}
+                };
+                context.SaveChanges();
+
+            }
         }
 
         public void RndPlayerChar(MainWindow MWIND) //Рандомайзер для игрока
